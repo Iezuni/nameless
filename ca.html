@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js"></script>
-    <title>Document</title>
+    <title>calculation/计算器</title>
     <style>
         button {
             font-size: 1.5em;
@@ -24,9 +24,11 @@
         #la {
             height: 1em;
             border: solid;
-
+            background-color: aqua;
         }
-
+        #info{
+            color:red;
+        }
         #box {
             height: 500x;
             width: 300px;
@@ -74,9 +76,9 @@
             //计算
             $("#jie").on("click", function () {
                 //alert(m);
-
-                n2 = parseFloat($("#la").html());
-                console.log("m:" + m + "\rn1:" + n1 + "\rn2:" + n2);
+                let n2te = parseFloat($("#la").html());
+                n2 = (n2te == NaN ? n2te : 0);
+                console.log("m:" + m + " n1:" + n1 + " n2:" + n2);
                 switch (m) {
                     case 1:
                         $("#la").html(n1 + n2);
@@ -91,7 +93,8 @@
                         $("#la").html(n1 / n2);
                         break;
                     default:
-                        $("#la").html("error");
+                        $("#la").html("");
+                        $("#info").html("错误");
                         break;
 
                 }
@@ -103,7 +106,8 @@
 <body>
     <div id="box">
         <p id="la"></p>
-        <button id="clear">clear</button><button id="de">de</button><button id="jie">=</button><br>
+        <p id="info"></p>
+        <button id="clear">清除</button><button id="de">初始化</button><button id="jie">计算</button><br>
         <button id="p">+</button><button id="j">-</button><button id="c">*</button><button id="ch">/</button><br>
         <button class="num">1</button><button class="num">2</button><button class="num">3</button><br>
         <button class="num">4</button><button class="num">5</button><button class="num">6</button><br>
