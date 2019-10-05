@@ -1,3 +1,4 @@
 "# nameless" <br>
 only for test<br>
-https://yinyunsan.github.io/nameless/
+[mainpage](https://yinyunsan.github.io/nameless/)
+[计算器](https://yinyunsan.github.io/nameless/ca.html)
