@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js"></script>
+    <title>calculation/计算器</title>
+    <style>
+        button {
+            font-size: 1.5em;
+            border: 0
+        }
+
+        button:hover {
+            background-color: #696969;
+        }
+
+        .num {
+            width: 32px;
+        }
+
+        #la {
+            height: 1em;
+            border: solid;
+            background-color: aqua;
+        }
+        #info{
+            color:red;
+        }
+        #box {
+            height: 500x;
+            width: 300px;
+            font-size :1.5em; 
+            border: solid 1px;
+            background-color: azure;
+            text-align: center;
+
+        }
+    </style>
+    <script>
+        var n1, n2, m;
+        $(function () {
+            $(".num").on("click", function () {
+                $("#la").html($("#la").html() + $(this).html()) //数字输入
+            });
+            //运算符录入
+            $("#p").on("click", function () {
+                n1 = parseFloat($("#la").html())
+                $("#la").html("");
+                m = 1;
+            });
+            $("#j").on("click", function () {
+                n1 = parseFloat($("#la").html())
+                $("#la").html("");
+                m = 2;
+            });
+            $("#c").on("click", function () {
+                n1 = parseFloat($("#la").html())
+                $("#la").html("");
+                m = 3;
+            });
+            $("#ch").on("click", function () {
+                n1 = parseFloat($("#la").html())
+                $("#la").html("");
+                m = 4;
+            });
+            $("#clear").on("click", function () {
+                $("#la").html("");
+            });
+            $("#de").on("click", function () {
+                n1 = null;
+                m = null;
+                $("#la").html("");
+            });
+            //计算
+            $("#jie").on("click", function () {
+                //alert(m);
+                let n2te = parseFloat($("#la").html());
+                n2 = n2te == NaN ? 0 : n2te;
+                console.log("m:" + m + " n1:" + n1 + " n2:" + n2);
+                switch (m) {
+                    case 1:
+                        $("#la").html(n1 + n2);
+                        break;
+                    case 2:
+                        $("#la").html(n1 - n2);
+                        break;
+                    case 3:
+                        $("#la").html(n1 * n2);
+                        break;
+                    case 4:
+                        $("#la").html(n1 / n2);
+                        break;
+                    default:
+                        $("#la").html("");
+                        $("#info").html("错误");
+                        break;
+
+                }
+            });
+        })
+    </script>
+</head>
+
+<body>
+    <div id="box">
+        <p id="la"></p>
+        <p id="info"></p>
+        <button id="clear">清除</button><button id="de">初始化</button><br>
+        <button id="jie">计算</button><br>
+        <button id="p">+</button><button id="j">-</button><button id="c">*</button><button id="ch">/</button><br>
+        <button class="num">1</button><button class="num">2</button><button class="num">3</button><br>
+        <button class="num">4</button><button class="num">5</button><button class="num">6</button><br>
+        <button class="num">7</button><button class="num">8</button><button class="num">9</button><br>
+        <button class="num">.</button><button class="num">0</button>
+    </div>
+
+</body>
+
+</html>
