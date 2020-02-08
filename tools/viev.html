@@ -1,0 +1,38 @@
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <style>
+    * {
+      margin: 0;
+      overflow: hidden
+    }
+  </style>
+</head>
+
+<body><button id="seturl">set Url</button><input id="urlname"><iframe id="main_frame" src="http://127.0.0.1"
+    width="100%" height="100%" frameborder="0"></iframe>
+  <script>
+    window.onload = () => {
+      if (localStorage.siteurl == undefined || null) {
+        alert("need a url")
+      } else {
+        document.getElementById("main_frame").src = localStorage.siteurl
+      }
+    };
+    document.getElementById("seturl").addEventListener("click", function () {
+      let regex = /^https:\/\/([\w-]+\.)+\w+(\/[\w-.\/?%&=#]*)?$/;
+      let str = document.getElementById("urlname").value;
+      let result = str.match(regex);
+      if (result) {
+        console.log("new url ", result[0]);
+        localStorage.siteurl = result[0];
+        alert("success")
+      } else {
+        alert("can not find a url,please use https")
+      }
+    });
+  </script>
+</body>
+
+</html>

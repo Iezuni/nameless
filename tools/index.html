@@ -3,37 +3,125 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Tools</title>
     <style>
         * {
             box-sizing: border-box;
-            word-break: break-all;
+            word-break: break-all
         }
 
         ul {
-            padding: 0;
+
+            margin: auto;
+            text-align: center
+        }
+
+        a {
+            text-decoration: none;
         }
 
         li {
             display: inline-block;
-
+            width: 200px;
+            height: 70px;
+            padding: auto;
+            transition: box-shadow .5s
         }
 
         li:hover {
+            box-shadow: #b2b2b2 2px 2px 3px 1px
+        }
+
+        .icon {
+            position: absolute;
+            top: 200px;
+            left: 200px;
+            animation: dindin 3s infinite linear;
+        }
+
+        .kl {
+            height: 80px;
+            width: 80px;
+            top: -100px;
+            position: relative;
+            background-image: linear-gradient(141deg, #1fc8db 51%, #2cb5e8 75%);
             box-shadow: #b2b2b2 2px 2px 3px 1px;
+
+            border-radius: 100%;
+        }
+
+
+        @keyframes dindin {
+            0% {}
+
+
+            100% {
+                transform: rotate(-360deg);
+            }
+        }
+
+        @keyframes breath {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(2);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .heart {
+            display: flex;
+            margin: 5px 0;
+            width: 40px;
+            height: 30px;
+            filter: drop-shadow(0 1px 1px #973340a3);
+            animation: breath infinite 2s ease;
+        }
+
+        .heart::before,
+        .heart::after {
+            content: '';
+            flex: 1;
+            height: 30px;
+            border-radius: 20px 20px 4px 4px;
+            transform-origin: 50% 6px;
+        }
+
+        .heart::before {
+            transform: rotate(-45deg);
+            background-image: linear-gradient(90deg, red, #ff6666);
+        }
+
+        .heart::after {
+            transform: rotate(45deg);
+            background-image: linear-gradient(-0deg, red, #ff8484);
         }
     </style>
 </head>
 
 <body>
-    <ul>
-        <li><a href="./ca.html">计算器</a></li>
-        <li><a href="./Crypto.html">加密</a></li>
-        <li><a href="./matrix.html">取模</a></li>
-        <li><a href="./xxx.html">?</a></li>
-    </ul>
+    <div class="icon">
+        <div class="heart"> </div>
+    </div>
+    
+    <div>
+        <ul><a href="./ca.html">
+                <li>计算器</li>
+            </a><a href="./Crypto.html">
+                <li>加密</li>
+            </a><a href="./matrix.html">
+                <li>取模</li>
+            </a><a href="./viev.html">
+                <li>?</li>
+            </a></ul>
+    </div>
 </body>
 
 </html>

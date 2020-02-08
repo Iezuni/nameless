@@ -6,10 +6,27 @@
 	<meta http-equiv="content-type" content="text/html; charset=utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<style>
+		.ani {
+			background-image: url("./a.png");
+			width: 140px;
+			height: 140px;
+			animation: 1.52s steps(19) infinite frame-gift-3-72;
+		}
+
+		@keyframes frame-gift-3-72 {
+			0% {
+				background-position-x: 0;
+			}
+
+			100% {
+				background-position-x: -2660px;
+			}
+		}
 	</style>
 </head>
 
 <body>
+	<div class="ani"></div>
 	<div>
 		<form action="https://www.baidu.com/s" target="_blank">
 			<input name="tn" type=hidden value="baidu"><input name="wd" maxlength="255" autocomplete="off">
