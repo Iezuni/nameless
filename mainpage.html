@@ -1,46 +1,38 @@
 <!DOCTYPE html>
 <html>
+	<head>
+		<title>主页</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" type="text/css" href="mainstyle.css" />
+		<script src="https://cdn.jsdelivr.net/npm/vue@2.6.11/dist/vue.js"></script>
+		<script src="./Base64.min.js"></script>
+	</head>
 
-<head>
-	<title>主页</title>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" type="text/css" href="mainstyle.css">
-	<script src="js/js1.js"></script>
-</head>
-
-<body>
-	<div class="header">
-		<p class="large_title">
-			主页
-		</p>
-		<div class="lite_loge">
-			#
-		</div>
-	</div>
-	<div class="row">
-		<div class="lside">
-			<ul>
-				<div>
-					神奇的操作
-				</div>
-				<li>实例</li>
-				<li>实例</li>
-				<li>实例</li>
-				<li>实例</li>
-				<li>实例</li>
-			</ul>
-		</div>
-		<div class="center_main">
-			<div class="content_title">test title</div>
-			<div class="content_main">test title<button onclick="evil()">don't press it</button></div>
-		</div>
-	</div>
-	<div class="footer">
-		<p>
-			founded by who?
-		</p>
-	</div>
-</body>
-
+	<body>
+		esbuild base64.js --minify --target=ie11
+		<div id="app">hello{{val}}sAdcxz</div>
+		<!-- <script>
+    let h = new Vue().$createElement;
+    Vue.component("renderVnode", {
+      props: {
+        vnode: {
+          type: Object,
+          required: true,
+        },
+      },
+      render: h("a"),
+    });
+    const app = new Vue({
+      el: "#app",
+      renderVnode: "renderVnode",
+      data() {
+        return {
+          val: 1,
+          a: h("a"),
+        };
+      },
+    });
+  </script> -->
+	</body>
 </html>
