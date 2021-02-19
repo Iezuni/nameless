@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>qrcodeMaker</title>
+		<script src="https://cdn.jsdelivr.net/npm/qrcode@1.4.4/build/qrcode.min.js"></script>
+	</head>
+	<body>
+		<textarea name="msg" id="text" cols="40" rows="10">ようこそ ｈｅｌｌｏ▼＿▼</textarea>
+		<br />
+		<canvas id="canvas"></canvas><br />
+		<a id="he" target="_blank" rel="noopener noreferrer" href="javascript:void(0)">view</a>
+		<script>
+			const canvas = document.getElementById('canvas');
+			const textInput = document.getElementById('text');
+			QRCode.toCanvas(canvas, 'ようこそ ｈｅｌｌｏ▼＿▼', function (error) {
+				if (error) console.error(error);
+				console.log('success!');
+			});
+			textInput.addEventListener('input', function (event) {
+				if (textInput.value)
+					QRCode.toCanvas(canvas, textInput.value, function (error) {
+						if (error) console.error(error);
+						console.log('success!');
+					});
+			});
+		</script>
+	</body>
+</html>
