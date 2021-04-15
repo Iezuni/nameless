@@ -14,12 +14,14 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/precache-manifest.ffdec5d762af1cbcc4df7a4c62fa000b.js"
+  "/precache-manifest.b8f9dccb343dd3ebb20898c6bc90d110.js"
 );
 
-workbox.core.setCacheNameDetails({prefix: "github-tools"});
+workbox.core.setCacheNameDetails({prefix: "githubTools-pwa"});
 
 workbox.core.skipWaiting();
+
+workbox.core.clientsClaim();
 
 /**
  * The workboxSW.precacheAndRoute() method efficiently caches and responds to
@@ -28,3 +30,6 @@ workbox.core.skipWaiting();
  */
 self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
+
+workbox.routing.registerRoute(/cdn\.jsdelivr\.net/, new workbox.strategies.CacheFirst({ "fetchOptions":{"mode":"cors","credentials":"omit"}, plugins: [new workbox.cacheableResponse.Plugin({ statuses: [ 200 ] })] }), 'GET');
+workbox.routing.registerRoute(/loli\.net/, new workbox.strategies.CacheFirst({ "fetchOptions":{"mode":"cors","credentials":"omit"}, plugins: [new workbox.cacheableResponse.Plugin({ statuses: [ 200 ] })] }), 'GET');
